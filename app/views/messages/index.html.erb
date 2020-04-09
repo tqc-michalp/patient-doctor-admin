@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="my-3 col-sm p-3 m-2 bg-white rounded shadow-sm">
+      <h6 class="border-bottom border-gray pb-2 mb-0">
+        Inbox <strong>Patient</strong> <small><%= User.current %></small>
+      </h6>
+      <%= render partial: "messages/index/message", collection: User.current.inbox_messages %>
+    </div>
+    <div class="my-3 col-sm p-3 m-2 bg-white rounded shadow-sm">
+      <h6 class="border-bottom border-gray pb-2 mb-0">
+        <% doctor = User.default_doctor %>
+        Inbox <strong>Doctor</strong> <small><%= doctor %> | Unread: <%= doctor.inbox.messages_unread_counter %></small>
+      </h6>
+      <%= render partial: "messages/index/message", collection: User.default_doctor.inbox_messages %>
+    </div>
+    <div class="my-3 col-sm p-3 m-2 bg-white rounded shadow-sm">
+      <h6 class="border-bottom border-gray pb-2 mb-0">
+        Inbox <strong>Admin</strong> <small><%= User.default_admin %></small>
+      </h6>
+      <%= render partial: "messages/index/message", collection: User.default_admin.inbox_messages %>
+    </div>
+  </div>
+</div>
