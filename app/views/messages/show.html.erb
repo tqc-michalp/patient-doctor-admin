@@ -1,0 +1,24 @@
+<div class="card my-3 ">
+  <h5 class="card-header">
+    <strong>From:</strong>
+    <%= "Dr." if @message.outbox.user.is_doctor? %>
+    <%= @message.outbox.user %>
+  </h5>
+
+  <div class="card-body">
+    <p class="card-text"><%= @message.body %></p>
+    <% @message.outbox.user %>
+    <div class="btn-group mb-2" role="group">
+      <%= link_to "Reply", new_message_path(inbox_id: @message.inbox_id, outbox_id: @message.outbox_id), class: "btn btn-primary" %>
+      <%= form_tag payments_path do %>
+        <%= hidden_field_tag "payment[message_id]", @message.id %>
+        <%= hidden_field_tag "payment[mode]", "debit_card" %>
+        <%= hidden_field_tag "payment[key]", Digest::SHA1.hexdigest("prescription") %>
+        <%= submit_tag "I've lost my prescription", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <p class="card-text">
+      Message read? <%= @message.read %>
+    </p>
+  </div>
+</div>

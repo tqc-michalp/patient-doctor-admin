@@ -1,0 +1,18 @@
+patient_to_doctor:
+  body: blah
+  outbox: patient
+  inbox: doctor
+
+patient_to_admin:
+  body: foo
+  outbox: patient
+  inbox: admin
+
+doctor_to_patient:
+  body: bar
+  outbox: doctor
+  inbox: patient
+admin_to_patien:
+  body: baz
+  outbox: admin
+  inbox: patient
