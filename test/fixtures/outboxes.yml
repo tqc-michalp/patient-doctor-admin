@@ -1,0 +1,6 @@
+patient:
+  user: patient
+doctor:
+  user: doctor
+admin:
+  user: admin
