@@ -6,7 +6,7 @@ ruby '2.6.5'
 
 gem 'rails', '~> 5.0.7', '>= 5.0.7.2'
 gem 'sqlite3', '~> 1.3.13'
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 4.3'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
